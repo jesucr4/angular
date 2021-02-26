@@ -1,0 +1,55 @@
+<app-barra-herramientas></app-barra-herramientas>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile >
+        <mat-card class="example-card">
+            <img mat-card-image  class="img-carta" src="https://news.mondoiberica.com.es/wp-content/uploads/2019/03/deifontes3.jpg" alt="Campo fútbol sintética">
+            <mat-card-content>
+              <h2>
+                Fútbol
+              </h2>
+            </mat-card-content>
+            <mat-card-actions>
+              <button color="primary" mat-raised-button (click)='listadoDeportes("futbol")'>Mostrar</button>
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile >
+        <mat-card class="example-card">
+        <img mat-card-image class="img-carta" src="https://s1.lanzadigital.com/wp-content/uploads/2020/06/Pistas-de-baloncesto-1-scaled.jpg" alt="Pista baloncesto">
+        <mat-card-content>
+          <h2>
+           Baloncesto
+          </h2>
+        </mat-card-content>
+        <mat-card-actions>
+          <button color="primary" mat-raised-button (click)='listadoDeportes("baloncesto")' >Mostrar</button>
+        </mat-card-actions>
+      </mat-card></mat-grid-tile>
+    <mat-grid-tile >
+        <mat-card class="example-card">
+            <img mat-card-image class="img-carta" src="https://www.murciaclubdetenis.es/wp-content/uploads/2018/05/articulo.jpg" alt="Pista de tenis">
+            <mat-card-content>
+              <h2>
+                Tenis
+              </h2>
+            </mat-card-content>
+            <mat-card-actions>
+              <button color="primary" mat-raised-button (click)='listadoDeportes("tenis")' >Mostrar</button>
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile >
+        <mat-card class="example-card">
+            <img mat-card-image class="img-carta" src="https://www.mundodeportivo.com/r/GODO/MD/p4/Motor/Imagenes/2017/11/28/Recortada/img_ironda_20171128-104240_imagenes_md_otras_fuentes_circuit-kIdD-U433267588085wII-980x554@MundoDeportivo-Web.jpg" alt="Pista fútbol sintética">
+            <mat-card-content>
+              <h2>
+                Motor
+              </h2>
+            </mat-card-content>
+            <mat-card-actions>
+              <button color="primary" mat-raised-button (click)='listadoDeportes("motor")' >Mostrar</button>
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+<app-footer></app-footer>

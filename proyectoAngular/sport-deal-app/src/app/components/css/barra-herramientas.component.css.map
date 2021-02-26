@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../barra-herramientas/barra-herramientas.component.scss"
+    ],
+    "names": [],
+    "file": "barra-herramientas.component.css"
+}

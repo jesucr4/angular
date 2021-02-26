@@ -7,6 +7,8 @@ import { from } from 'rxjs';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { ComunicacionAlertaService } from 'src/app/services/comunicacion-alerta.service';
+import { MatDialog } from '@angular/material/dialog';
+import { NuevaInstalacionComponent } from '../nueva-instalacion/nueva-instalacion.component';
 @Component({
   selector: 'app-listado-instalaciones',
   templateUrl: './listado-instalaciones.component.html',
@@ -27,12 +29,13 @@ export class ListadoInstalacionesComponent implements OnInit, AfterViewInit {
   //3->TENIS
   //4->MOTOR
   
-  tipoConsulta: number;
+ // tipoConsulta: number;
 
   dataSourceTabla = new MatTableDataSource<instalacion>(this.listadoInstalaciones.instalaciones);
   constructor( private instalacionService : InstalacionService, private router: Router,
     private usuarioService : UsuarioService, private rutaActiva : ActivatedRoute ,
-    private comunicacionAlertas: ComunicacionAlertaService) { }
+    private comunicacionAlertas: ComunicacionAlertaService,
+    private dialog: MatDialog) { }
   ngAfterViewInit(): void {
     this.actualizaListadoInstalaciones();
   }
@@ -53,9 +56,9 @@ export class ListadoInstalacionesComponent implements OnInit, AfterViewInit {
   actualizaListadoInstalaciones() {
     
    // this.comunicacionAlertas.abrirDialogCargando(); // Pantalla de carga
-    // Petición de mensajes al servicio
+    // Petición de instalaciones al servicio
     
-    this.instalacionService.getListadoInstalaciones(this.tipoInstalacion, this.tipoConsulta ).subscribe(data => {
+    this.instalacionService.getListadoInstalaciones(this.tipoInstalacion).subscribe(data => {
       if (data["result"] == "fail") { // Algo ha fallado
         this.comunicacionAlertas.abrirDialogError('Imposible obtener los mensajes desde el servidor');
       }
@@ -68,12 +71,18 @@ export class ListadoInstalacionesComponent implements OnInit, AfterViewInit {
   }
 
   cambioCompeticiones(indice) {
-    if (indice == 0){
+    if (indice == 1){
       this.actualizaListadoInstalaciones;
     }
-    if (indice == 1){
-
+    if (indice == 2){
+      this.router.navigate(["/listadoTorneo/"+this.tipoInstalacion]);
+    }
+    if (indice == 0){
+      this.router.navigate(["/pantallaPrincipal"]);
     }
   }  
 
+  nuevaInstalacion() {
+    this.router.navigate(['/nuevaInstalacion/'+this.tipoInstalacion]); 
+  }   
 }

@@ -1,1 +1,53 @@
-<p>listado-torneo works!</p>
+
+<mat-tab-group [selectedIndex]="2" (selectedTabChange)="cambioCompeticiones($event.index)" animationDuration="0ms">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">home</mat-icon>
+            Inicio
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">list_alt</mat-icon>
+            Listado
+        </ng-template>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">emoji_events</mat-icon>
+            Torneos
+        </ng-template>
+    </mat-tab>
+    
+</mat-tab-group>
+
+<div class="contenedorTabla">
+    <table mat-table [dataSource]="dataSourceTabla" class="example-table" id="tablaFutbol">
+
+        <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let row">{{row.nombre}}</td>
+        </ng-container>
+       <ng-container matColumnDef="Instalacion">
+            <th mat-header-cell *matHeaderCellDef>Instalacion</th>
+            <td mat-cell *matCellDef="let row"> {{getInstalacionTorneo(row.instalacion)}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="ButtonEdit">
+            <th mat-header-cell *matHeaderCellDef>Editar</th>
+            <td mat-cell *matCellDef="let row"><button color="primary" mat-raised-button  >Editar</button></td>
+        </ng-container>
+        <ng-container matColumnDef="ButtonDelete">
+            <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+            <td mat-cell *matCellDef="let row"><button color="warn" mat-raised-button (click)="eliminar(row.id)" >Eliminar</button></td>
+        </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnas" ></tr>
+        <tr mat-row *matRowDef="let row; columns: columnas;"
+            class="element-row"></tr> 
+    </table>
+</div>
+<div class="btInstalacion">
+    <button color="primary" mat-flat-button (click)="nuevoTorneo()" >Añadir torneo</button>
+</div>
+

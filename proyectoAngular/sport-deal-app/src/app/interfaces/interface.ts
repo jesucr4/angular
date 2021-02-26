@@ -5,11 +5,18 @@ export interface DatosConJwt {
 export interface instalacion{
     id: number;
     nombre: string;
+    imagen: string;
     capacidad: number;
     localidad: string;
-    idInstalacion: modalidad;
-    fecha_Construccion: string;
-    imagen: string;
+    fecha_Construccion: Date;
+    idModalidad: modalidad;
+}
+
+export interface competicion{
+    id: number;
+    nombre: string;
+    Modalidad: modalidad;
+    idInstalacion: instalacion;
 }
 
 export interface modalidad {
@@ -20,6 +27,10 @@ export interface modalidad {
 export interface ListadoInstalaciones {
     instalaciones: instalacion[];
     instalacionesTotal: number; 
+}
+
+export interface ListadoCompeticiones {
+    competiciones: competicion[];
 }
 
 export interface Usuario {

@@ -29,9 +29,17 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CuadroDialogoComponent } from './components/cuadro-dialogo/cuadro-dialogo.component';
 import { ImagenInstalacionComponent } from './components/imagen-instalacion/imagen-instalacion.component';
 import { ListadoTorneoComponent } from './components/listado-torneo/listado-torneo.component';
+import { NuevaInstalacionComponent } from './components/nueva-instalacion/nueva-instalacion.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 registerLocaleData(localeEs, 'es');
+import { from } from 'rxjs';
+import { NuevoTorneoComponent } from './components/nuevo-torneo/nuevo-torneo.component';
+
 
 
 @NgModule({
@@ -44,7 +52,9 @@ registerLocaleData(localeEs, 'es');
     ListadoInstalacionesComponent,
     CuadroDialogoComponent,
     ImagenInstalacionComponent,
-    ListadoTorneoComponent
+    ListadoTorneoComponent,
+    NuevaInstalacionComponent,
+    NuevoTorneoComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +74,11 @@ registerLocaleData(localeEs, 'es');
     MatTooltipModule,
     MatGridListModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true}, {provide:LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-<app-barra-herramientas></app-barra-herramientas>
+
 <mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile >
         <mat-card class="example-card">
@@ -9,7 +9,7 @@
               </h2>
             </mat-card-content>
             <mat-card-actions>
-              <button color="primary" mat-raised-button (click)='listadoDeportes("futbol")'>Mostrar</button>
+              <button color="primary" mat-raised-button [routerLink]="['/listadoInstalaciones/1']">Mostrar</button>
             </mat-card-actions>
           </mat-card>
     </mat-grid-tile>
@@ -22,7 +22,7 @@
           </h2>
         </mat-card-content>
         <mat-card-actions>
-          <button color="primary" mat-raised-button (click)='listadoDeportes("baloncesto")' >Mostrar</button>
+          <button color="primary" mat-raised-button [routerLink]="['/listadoInstalaciones/3']" >Mostrar</button>
         </mat-card-actions>
       </mat-card></mat-grid-tile>
     <mat-grid-tile >
@@ -34,7 +34,7 @@
               </h2>
             </mat-card-content>
             <mat-card-actions>
-              <button color="primary" mat-raised-button (click)='listadoDeportes("tenis")' >Mostrar</button>
+              <button color="primary" mat-raised-button [routerLink]="['/listadoInstalaciones/2']">Mostrar</button>
             </mat-card-actions>
           </mat-card>
     </mat-grid-tile>
@@ -47,9 +47,8 @@
               </h2>
             </mat-card-content>
             <mat-card-actions>
-              <button color="primary" mat-raised-button (click)='listadoDeportes("motor")' >Mostrar</button>
+              <button color="primary" mat-raised-button [routerLink]="['/listadoInstalaciones/4']">Mostrar</button>
             </mat-card-actions>
           </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
-<app-footer></app-footer>

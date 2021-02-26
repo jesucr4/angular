@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { CuadroDialogoComponent } from '../components/cuadro-dialogo/cuadro-dialogo.component';
 import { DialogTypes } from '../components/cuadro-dialogo/dialog-data-type';
 import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class ComunicacionAlertaService {
   dialogConfig = new MatDialogConfig();
 
   // Necesito un componente de tipo MatDialog (de Angular) para mostrar en pantalla un diálogo
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog,
+    private snackBar: MatSnackBar) {
     this.dialogConfig.disableClose = true; // El dialogo no se cerrará automaticamente
     this.dialogConfig.autoFocus = true; // El foco de la aplicación pasará directamente al dialogo
    }
@@ -77,5 +79,13 @@ export class ComunicacionAlertaService {
    */
   cerrarDialogo() {
     this.dialog.closeAll();
+  }
+
+  mostrarSnackBar(mensajeAMostrar: string) {
+    this.snackBar.open(mensajeAMostrar, null, {
+      duration: 2000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
   }
 }

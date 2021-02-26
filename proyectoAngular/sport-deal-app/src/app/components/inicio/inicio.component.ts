@@ -17,10 +17,10 @@ export class InicioComponent implements OnInit {
 
   listadoDeportes(modalidad : string){
     switch (modalidad){
-      case "futbol" : this.router.navigate(["/listadoInstalaciones/5"]);
-      case "baloncesto" : this.router.navigate(["/listadoInstalaciones/6"]);
-      case "tenis" : this.router.navigate(["/listadoInstalaciones/7"]);
-      case "motor" : this.router.navigate(["/listadoInstalaciones/8"]);
+      case "futbol" : this.router.navigate(["/listadoInstalaciones/1"]);
+      case "baloncesto" : this.router.navigate(["/listadoInstalaciones/3"]);
+      case "tenis" : this.router.navigate(["/listadoInstalaciones/2"]);
+      case "motor" : this.router.navigate(["/listadoInstalaciones/4"]);
     }
     
   }

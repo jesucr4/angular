@@ -51,5 +51,4 @@ export class UsuarioService {
       this.cambiosEnUsuarioAutenticado.emit(usuarioAutenticado);
     });
   }
-
 }

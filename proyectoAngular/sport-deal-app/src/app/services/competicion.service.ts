@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ListadoCompeticiones } from '../interfaces/interface';
+import { competicion, ListadoCompeticiones } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class CompeticionService {
   getListadoCompeticiones (tipo: number):Observable<ListadoCompeticiones>{
     return this.http.get<ListadoCompeticiones>("/torneo/deporte/?mod="+tipo).pipe();
 
+  }
+
+  getCompeticion (id: number):Observable<competicion>{
+    return this.http.get<competicion>('/torneo/id/?id='+id).pipe();
   }
 
   eliminarCompeticion (id: number):Observable<any>{
@@ -28,6 +32,10 @@ export class CompeticionService {
       'idInstalacion': idInstalacion,
     };
     return this.http.put<string>('/torneo/nuevo',dto);
+  }
+
+  actualizarDatosCompeticion (id: number,competicion: competicion){
+    return this.http.post<String>('/torneo/actualizar/?id='+id, competicion).pipe();
   }
 
 }

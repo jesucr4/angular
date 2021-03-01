@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -27,7 +27,6 @@ import { ListadoInstalacionesComponent } from './components/listado-instalacione
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CuadroDialogoComponent } from './components/cuadro-dialogo/cuadro-dialogo.component';
-import { ImagenInstalacionComponent } from './components/imagen-instalacion/imagen-instalacion.component';
 import { ListadoTorneoComponent } from './components/listado-torneo/listado-torneo.component';
 import { NuevaInstalacionComponent } from './components/nueva-instalacion/nueva-instalacion.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
@@ -37,8 +36,8 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 registerLocaleData(localeEs, 'es');
-import { from } from 'rxjs';
 import { NuevoTorneoComponent } from './components/nuevo-torneo/nuevo-torneo.component';
+import { EditarTorneoComponent } from './components/editar-torneo/editar-torneo.component';
 
 
 
@@ -51,10 +50,10 @@ import { NuevoTorneoComponent } from './components/nuevo-torneo/nuevo-torneo.com
     InicioComponent,
     ListadoInstalacionesComponent,
     CuadroDialogoComponent,
-    ImagenInstalacionComponent,
     ListadoTorneoComponent,
     NuevaInstalacionComponent,
-    NuevoTorneoComponent
+    NuevoTorneoComponent,
+    EditarTorneoComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +77,7 @@ import { NuevoTorneoComponent } from './components/nuevo-torneo/nuevo-torneo.com
     MatDatepickerModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true}, {provide:LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditarTorneoComponent } from './components/editar-torneo/editar-torneo.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ListadoInstalacionesComponent } from './components/listado-instalaciones/listado-instalaciones.component';
 import { ListadoTorneoComponent } from './components/listado-torneo/listado-torneo.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'listadoTorneo/:id', component: ListadoTorneoComponent},
   {path: 'nuevaInstalacion/:id', component: NuevaInstalacionComponent},
   {path: 'nuevoTorneo/:id', component: NuevoTorneoComponent},
+  {path: 'editarTorneo/:id', component: EditarTorneoComponent},
 ];
 
 @NgModule({

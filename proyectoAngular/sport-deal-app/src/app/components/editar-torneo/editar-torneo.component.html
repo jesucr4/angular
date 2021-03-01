@@ -1,0 +1,26 @@
+<div class="contenedor">
+    <h2>Crear nuevo torneo </h2>
+    <mat-toolbar style="margin: 0px; padding: 0px; background: white;">
+        <button mat-button (click)="volver()" color="primary" aria-label="Cerrar" matTooltip="Cancelar">
+            <mat-icon>cancel</mat-icon>
+        </button>
+        <button mat-button (click)="editar()" color="primary" aria-label="editar la instalación"
+            matTooltip="editar la instalación">
+            <mat-icon>edit</mat-icon> Editar
+        </button>
+    </mat-toolbar>
+    <form  [formGroup]="form">
+        <mat-form-field class="ancho-100">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" formControlName="nombre">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Instalacion</mat-label>
+            <mat-select formControlName="instalacion">
+                <mat-option *ngFor="let instalacion of instalacionesDeporte" [value]="instalacion.id">
+                    {{instalacion.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>

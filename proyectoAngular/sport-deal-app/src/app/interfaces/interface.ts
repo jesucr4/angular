@@ -15,8 +15,8 @@ export interface instalacion{
 export interface competicion{
     id: number;
     nombre: string;
-    Modalidad: modalidad;
-    idInstalacion: instalacion;
+    modalidad: number;
+    instalacion: number;
 }
 
 export interface modalidad {

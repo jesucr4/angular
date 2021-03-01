@@ -92,6 +92,10 @@ export class ListadoTorneoComponent implements OnInit, AfterViewInit {
     
   }
 
+  editar (id:number){
+    this.router.navigate(['/editarTorneo/'+id]);
+  }
+
   nuevoTorneo() {
     this.router.navigate(['/nuevoTorneo/'+this.tipoInstalacion]); 
   }   

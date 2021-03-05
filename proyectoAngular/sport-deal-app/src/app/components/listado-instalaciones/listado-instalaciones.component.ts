@@ -41,23 +41,19 @@ export class ListadoInstalacionesComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.usuarioService.getUsuarioAutenticado().subscribe(usuario => {
+   /* this.usuarioService.getUsuarioAutenticado().subscribe(usuario => {
       if (usuario == null) { // Si no hay usuario autenticado, redirijo al login
         this.router.navigate(['/login']);
       }
       else {
         this.usuarioAutenticado = usuario;
       }
-    });
+    });*/
     this.tipoInstalacion = this.rutaActiva.snapshot.params.id;
   
   }
 
-  actualizaListadoInstalaciones() {
-    
-   // this.comunicacionAlertas.abrirDialogCargando(); // Pantalla de carga
-    // Petición de instalaciones al servicio
-    
+  actualizaListadoInstalaciones() {  
     this.instalacionService.getListadoInstalaciones(this.tipoInstalacion).subscribe(data => {
       if (data["result"] == "fail") { // Algo ha fallado
         this.comunicacionAlertas.abrirDialogError('Imposible obtener los mensajes desde el servidor');

@@ -36,7 +36,7 @@ export class EditarTorneoComponent implements OnInit {
     
     this.form = new FormGroup({
       nombre: new FormControl('',[Validators.required]),
-      instalacion: new FormControl('',[]),
+      instalacion: new FormControl('',[Validators.required]),
     });
   }
 
@@ -45,8 +45,8 @@ export class EditarTorneoComponent implements OnInit {
       this.competicion = competicion;
       this.form.controls.nombre.setValue(this.competicion.nombre);
       console.log(this.competicion.nombre);
-      this.form.controls.instalacion.setValue(this.competicion.instalacion);
-      console.log(this.competicion.instalacion);
+      this.form.controls.instalacion.setValue(this.competicion.idInstalacion);
+      console.log(this.competicion.idInstalacion);
       this.idModalidad = this.competicion.modalidad;
       this.cargarInstalacionesDeporte();
     })
@@ -55,7 +55,7 @@ export class EditarTorneoComponent implements OnInit {
   editar(){
     this.comunicacionAlertas.abrirDialogCargando();
     this.competicion.nombre = this.form.controls.nombre.value;
-    this.competicion.instalacion = this.form.controls.instalacion.value;
+    this.competicion.idInstalacion = this.form.controls.instalacion.value;
     //this.competicion.modalidad = this.idModalidad;
     this.competicionService.actualizarDatosCompeticion(this.idCompeticion,this.competicion).subscribe(
       resultado => {

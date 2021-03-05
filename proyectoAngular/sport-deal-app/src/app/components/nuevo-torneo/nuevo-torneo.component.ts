@@ -27,11 +27,11 @@ export class NuevoTorneoComponent implements OnInit {
   ngOnInit(): void {
     this.tipoInstalacion = this.rutaActiva.snapshot.params.id;
     this.cargarInstalacionesDeporte();
-    this.usuarioService.getUsuarioAutenticado().subscribe(usuario =>
-      this.usuarioAutenticado = usuario);
+    //this.usuarioService.getUsuarioAutenticado().subscribe(usuario =>
+      //this.usuarioAutenticado = usuario);
     this.form = new FormGroup({
       nombre: new FormControl('',[Validators.required]),
-      instalacion: new FormControl('',[]),
+      instalacion: new FormControl('',[Validators.required]),
     });
     
     console.log(this.tipoInstalacion);

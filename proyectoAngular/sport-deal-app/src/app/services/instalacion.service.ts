@@ -18,6 +18,10 @@ export class InstalacionService {
     return this.http.get<instalacion[]>('/instalacion/nombres/?mod='+tipo).pipe();
   }
 
+  getNombreInstalacion (tipo: number):Observable<any>{
+    return this.http.get<any>('instalacion/id/?mod='+tipo).pipe();
+  }
+
  /* crearNuevaInstalacion (nombre: string, imagen: string, localidad:string, capacidad: number, fecha_construccion: Date, idModalidad: number){
     console.log (nombre + " " + localidad + " " + capacidad + " " + fecha_construccion + " " + idModalidad);
     var dto = {

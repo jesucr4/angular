@@ -19,6 +19,7 @@ export class NuevaInstalacionComponent implements OnInit {
   form: FormGroup; // Para el formulario reactivo
   imagen : any;
   tipoInstalacion: number ;
+  //fecha: Date;
 
   constructor(private usuarioService: UsuarioService,
     private instalacionService: InstalacionService,
@@ -28,14 +29,15 @@ export class NuevaInstalacionComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.usuarioService.getUsuarioAutenticado().subscribe(usuario =>
-      this.usuarioAutenticado = usuario);
-
+    //this.usuarioService.getUsuarioAutenticado().subscribe(usuario =>
+      //this.usuarioAutenticado = usuario);
+     // this.fecha = new Date();
+     // console.log(this.fecha);
       this.form = new FormGroup({
         nombre: new FormControl('',[Validators.required]),
         localidad: new FormControl('',[Validators.required]),
         capacidad: new FormControl('',[Validators.required]),
-        f_construccion: new FormControl('',[Validators.required]),
+        f_construccion: new FormControl('',[]),
       });
       this.tipoInstalacion = this.rutaActiva.snapshot.params.id;
       //console.log(this.tipoInstalacion);

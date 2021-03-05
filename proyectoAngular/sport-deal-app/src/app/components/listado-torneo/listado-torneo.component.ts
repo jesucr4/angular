@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { competicion, instalacion, ListadoCompeticiones, modalidad, Usuario } from 'src/app/interfaces/interface';
 import { CompeticionService } from 'src/app/services/competicion.service';
 import { ComunicacionAlertaService } from 'src/app/services/comunicacion-alerta.service';
+import { InstalacionService } from 'src/app/services/instalacion.service';
 import { ModalidadService } from 'src/app/services/modalidad.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -27,14 +28,14 @@ export class ListadoTorneoComponent implements OnInit, AfterViewInit {
   constructor( private competicionService: CompeticionService , private router: Router,
     private usuarioService : UsuarioService, private rutaActiva : ActivatedRoute ,
     private comunicacionAlertas: ComunicacionAlertaService,
-    private modalidadService: ModalidadService ) { }
+    private modalidadService: ModalidadService, private instalacionService: InstalacionService ) { }
   ngAfterViewInit(): void {
     this.actualizaListadoCompeticiones();
   }
 
   ngOnInit(): void {
     
-
+    /*
     this.usuarioService.getUsuarioAutenticado().subscribe(usuario => {
       if (usuario == null) { // Si no hay usuario autenticado, redirijo al login
         this.router.navigate(['/login']);
@@ -42,7 +43,7 @@ export class ListadoTorneoComponent implements OnInit, AfterViewInit {
       else {
         this.usuarioAutenticado = usuario;
       }
-    });
+    });*/
     this.tipoInstalacion = this.rutaActiva.snapshot.params.id;
     //console.log(this.tipoInstalacion);
     
@@ -80,10 +81,14 @@ export class ListadoTorneoComponent implements OnInit, AfterViewInit {
 
   getInstalacionTorneo (instalacion: instalacion){
     return instalacion.nombre;
+    /*return this.instalacionService.getNombreInstalacion(id).subscribe(
+      resultado => {
+        console.log(resultado)});*/
+   // return instalacion;
   }
 
   eliminar (id: number){
-    console.log(id);
+   // console.log(id);
     this.competicionService.eliminarCompeticion(id).subscribe(resultado => {
         this.comunicacionAlertas.mostrarSnackBar('Eliminado')
         this.actualizaListadoCompeticiones();

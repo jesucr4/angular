@@ -38,6 +38,7 @@ import {MatSelectModule} from '@angular/material/select';
 registerLocaleData(localeEs, 'es');
 import { NuevoTorneoComponent } from './components/nuevo-torneo/nuevo-torneo.component';
 import { EditarTorneoComponent } from './components/editar-torneo/editar-torneo.component';
+import { PrevComponent } from './components/prev/prev.component';
 
 
 
@@ -53,7 +54,8 @@ import { EditarTorneoComponent } from './components/editar-torneo/editar-torneo.
     ListadoTorneoComponent,
     NuevaInstalacionComponent,
     NuevoTorneoComponent,
-    EditarTorneoComponent
+    EditarTorneoComponent,
+    PrevComponent
   ],
   imports: [
     BrowserModule,

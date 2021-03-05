@@ -4,7 +4,7 @@
         <button mat-button (click)="volver()" color="primary" aria-label="Cerrar" matTooltip="Cancelar">
             <mat-icon>cancel</mat-icon>
         </button>
-        <button mat-button (click)="editar()" color="primary" aria-label="editar la instalación"
+        <button mat-button [disabled]="form.invalid" (click)="editar()" color="primary" aria-label="editar la instalación"
             matTooltip="editar la instalación">
             <mat-icon>edit</mat-icon> Editar
         </button>

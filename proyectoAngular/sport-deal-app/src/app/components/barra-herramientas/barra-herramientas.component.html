@@ -5,25 +5,18 @@
       </button>
   
       <span class="spacer"></span>
-  
+  <!--
       <ng-container>
-        <button mat-button [matMenuTriggerFor]="menu" matTooltip="Usuario">
+        <button mat-button [matMenuTriggerFor]="menu" matTooltip="Usuario" (click)="menuLogin()">
             <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item >
-            <mat-icon>account_circle</mat-icon>Modificar mis datos
-          </button>
-          <button mat-menu-item >
-            <mat-icon>vpn_key</mat-icon>
-            <span>Modificar contraseña</span>
-          </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="confirmacionAbandonarSesion()">
             <mat-icon>exit_to_app</mat-icon>
             <span>Abandonar la sesión</span>
           </button>
         </mat-menu>
-      </ng-container>
+      </ng-container>-->
     </mat-toolbar-row>
   </mat-toolbar>
 

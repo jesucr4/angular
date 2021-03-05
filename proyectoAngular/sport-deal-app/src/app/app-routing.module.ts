@@ -7,9 +7,11 @@ import { ListadoTorneoComponent } from './components/listado-torneo/listado-torn
 import { LoginUsuarioComponent } from './components/login-usuario/login-usuario.component';
 import { NuevaInstalacionComponent } from './components/nueva-instalacion/nueva-instalacion.component';
 import { NuevoTorneoComponent } from './components/nuevo-torneo/nuevo-torneo.component';
+import { PrevComponent } from './components/prev/prev.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full' },
+  {path: '', redirectTo: 'pantallaEntrada', pathMatch: 'full' },
+  {path: 'pantallaEntrada', component: PrevComponent},
   {path: 'login', component: LoginUsuarioComponent},
   {path: 'pantallaPrincipal', component: InicioComponent},
   {path: 'listadoInstalaciones/:id', component: ListadoInstalacionesComponent},
